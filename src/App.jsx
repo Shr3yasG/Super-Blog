@@ -3,8 +3,8 @@ import "./App.css";
 import { useDispatch } from "react-redux";
 import authService from "./appwrite/auth";
 import { login, logout } from "./store/authSlice";
-import Footer from "./components/Footer/Footer";
-import Header from "./components/Header/Header";
+// import Footer from "./components/Footer/Footer";
+import {Header,Footer} from "./components/index";
 import { Outlet } from "react-router-dom";
 
 function App() {
@@ -32,7 +32,7 @@ function App() {
       <div className="w-full block">
         <Header />
         <main>{/* <Outlet/> */}</main>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </div>
   ) : null;
