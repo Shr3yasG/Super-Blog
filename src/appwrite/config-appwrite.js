@@ -1,5 +1,5 @@
 import config from "../config/config";
-import { Client, Account, ID, Databases, Storage, Query } from "appwrite";
+import { Client, ID, Databases, Storage, Query } from "appwrite";
 
 export class Service {
   client = new Client();
@@ -51,19 +51,19 @@ export class Service {
     }
   }
 
-  async deletePost(slug){
+  async deletePost(slug) {
     try {
-      return await this.databases.deleteDocument(
+      await this.databases.deleteDocument(
         config.appwriteDatabaseId,
         config.appwriteCollectionId,
-        slug,
-      )
-      return true
+        slug
+      );
+      return true; 
     } catch (error) {
-      console.log("Appwrite service :: logout :: error", error);
-      return false 
+      console.error("Appwrite service :: deletePost :: error", error);
+      return false; 
     }
-
+    
   }
 
   async getPost(slug){

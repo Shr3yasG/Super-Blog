@@ -60,7 +60,7 @@ function Login() {
                         "Email address must be a valid address",
                     }
                 })}
-                /> 
+                />
                 <Input
                 label="Password: "
                 type="password"

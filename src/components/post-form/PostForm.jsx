@@ -39,7 +39,7 @@ export default function PostForm({ post }) {
 
             if (file) {
                 const fileId = file.$id;
-                data.featuredImage = fileId;
+                data.fimg = fileId;
                 const dbPost = await appwriteService.createPost({ ...data, userId: userData.$id });
 
                 if (dbPost) {
@@ -101,7 +101,7 @@ export default function PostForm({ post }) {
                 {post && (
                     <div className="w-full mb-4">
                         <img
-                            src={appwriteService.getFilePreview(post.featuredImage)}
+                            src={appwriteService.getFilePreview(post.fimg)}
                             alt={post.title}
                             className="rounded-lg"
                         />
